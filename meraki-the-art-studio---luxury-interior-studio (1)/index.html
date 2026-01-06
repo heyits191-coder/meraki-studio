@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meraki The Art Studio | Luxury Interior Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-luxury: #F9F7F2;
+        --text-primary: #1A1A1A;
+        --text-secondary: #4A4A4A;
+        --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-luxury);
+        color: var(--text-primary);
+        margin: 0;
+        overflow-x: hidden;
+        opacity: 0;
+        animation: pageFadeIn 2.5s var(--ease-premium) forwards;
+      }
+      h1, h2, h3, .serif {
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* Background Grain Overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+        opacity: 0.04;
+        pointer-events: none;
+        z-index: 9999;
+        animation: noiseDrift 0.5s steps(2) infinite;
+      }
+
+      @keyframes noiseDrift {
+        0% { transform: translate(0,0); }
+        10% { transform: translate(-5%,-5%); }
+        20% { transform: translate(-10%,5%); }
+        30% { transform: translate(5%,-10%); }
+        40% { transform: translate(-5%,15%); }
+        50% { transform: translate(-10%,5%); }
+        60% { transform: translate(15%,0); }
+        70% { transform: translate(0,10%); }
+        80% { transform: translate(-15%,0); }
+        90% { transform: translate(10%,5%); }
+        100% { transform: translate(5%,0); }
+      }
+      
+      @keyframes pageFadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes fadeRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      /* Infinite Floating/Breathing Animation */
+      @keyframes subtleFloat {
+        0%   { opacity: 0.7; transform: translateY(0px); }
+        50%  { opacity: 1;    transform: translateY(-6px); }
+        100% { opacity: 0.7; transform: translateY(0px); }
+      }
+
+      @keyframes luxuryBreath {
+        0%, 100% { opacity: 0.7; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-3px); }
+      }
+
+      @keyframes numberPulse {
+        0%, 100% { opacity: 0.1; }
+        50% { opacity: 0.4; }
+      }
+
+      @keyframes scrollSlide {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      @keyframes slowPan {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .animate-fade-up { animation: fadeUp 2s var(--ease-premium) forwards; }
+      .animate-fade-left { animation: fadeLeft 2s var(--ease-premium) forwards; }
+      .animate-fade-right { animation: fadeRight 2s var(--ease-premium) forwards; }
+      .animate-scale-in { animation: scaleIn 2s var(--ease-premium) forwards; }
+      
+      .animate-subtle-float { animation: subtleFloat 8s ease-in-out infinite; }
+      .animate-luxury-breath { animation: luxuryBreath 6s ease-in-out infinite; }
+      .animate-number-pulse { animation: numberPulse 7s ease-in-out infinite; }
+      .animate-slow-pan { animation: slowPan 15s ease-in-out infinite; }
+
+      .reveal-hidden { opacity: 0; }
+      
+      .delay-100 { animation-delay: 0.1s; }
+      .delay-200 { animation-delay: 0.2s; }
+      .delay-300 { animation-delay: 0.3s; }
+      .delay-400 { animation-delay: 0.4s; }
+      .delay-500 { animation-delay: 0.5s; }
+      .delay-600 { animation-delay: 0.6s; }
+      .delay-1000 { animation-delay: 1s; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
