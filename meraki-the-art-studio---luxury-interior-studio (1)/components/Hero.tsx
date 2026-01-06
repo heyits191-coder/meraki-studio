@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   
   // High-quality stock video URL showing luxury interiors
-  const videoUrl = "Hyper_cinematic_architectural_1080p_202601061.mp4";
+  const videoUrl = "/videos/Hyper_cinematic_architectural_1080p_202601061.mp4";
 
   useEffect(() => {
     const handleScroll = () => {
